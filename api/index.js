@@ -58,7 +58,15 @@ async function initServer() {
     },
   });
 
-  app.use(
+  app.get("/api/graphql", (_req, res) => {
+    res.json({ message: "Server is working" });
+  });
+
+  app.get("/graphql", (_req, res) => {
+    res.json({ message: "Server is working" });
+  });
+
+  app.post(
     "/graphql",
     cors({
       origin: allowedOrigins.length > 0 ? allowedOrigins : true,
@@ -68,7 +76,7 @@ async function initServer() {
     graphQLHandler
   );
 
-  app.use(
+  app.post(
     "/api/graphql",
     cors({
       origin: allowedOrigins.length > 0 ? allowedOrigins : true,
@@ -79,7 +87,7 @@ async function initServer() {
   );
 
   app.get("/", (_req, res) => {
-    res.json({ message: "GraphQL API Server" });
+    res.json({ message: "Server is working" });
   });
 
   server = { app, apolloServer };
