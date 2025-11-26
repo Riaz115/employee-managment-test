@@ -279,7 +279,7 @@ export const DashboardPage = () => {
       <header className="bg-gradient-to-r from-blue-50 via-blue-100 to-indigo-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-900 shadow-lg sticky top-0 z-30 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <div className="lg:hidden">
                 <HamburgerMenu
                   isOpen={isMenuOpen}
@@ -288,7 +288,7 @@ export const DashboardPage = () => {
                   onProfileClick={() => setShowProfilePage(true)}
                 />
               </div>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+              <h1 className="text-base sm:text-2xl font-bold text-gray-900 dark:text-white">
                 Employee Management
               </h1>
             </div>
@@ -318,14 +318,14 @@ export const DashboardPage = () => {
                 <Settings className="w-4 h-4 mr-2" />
                 Settings
               </Button>
-              <span className="text-sm text-gray-700 dark:text-gray-300 hidden sm:block">
+              <span className="text-sm text-gray-700 dark:text-gray-300 hidden lg:block">
                 {currentUser?.name} ({currentUser?.role})
               </span>
               <Button
                 variant="ghost"
                 onClick={logout}
                 size="sm"
-                className="text-gray-900 dark:text-white hover:bg-blue-200 hover:text-gray-900 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="text-gray-900 dark:text-white hover:bg-blue-200 hover:text-gray-900 dark:hover:bg-gray-700 dark:hover:text-white hidden lg:flex"
               >
                 <LogOut className="w-4 h-4" />
               </Button>
@@ -335,16 +335,16 @@ export const DashboardPage = () => {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6">
+        <div className="flex flex-row items-center justify-between gap-2 mb-6">
           <ViewToggle view={view} onViewChange={setView} />
           {isAdmin && (
             <Button
               onClick={() => setShowAddModal(true)}
-              className="rounded-full px-3 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:from-blue-500 dark:to-indigo-500 dark:hover:from-blue-600 dark:hover:to-indigo-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base whitespace-nowrap"
+              className="rounded-full px-3 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:from-blue-500 dark:to-indigo-500 dark:hover:from-blue-600 dark:hover:to-indigo-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-xs sm:text-base whitespace-nowrap"
             >
               <UserPlus className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 inline" />
-              <span className="hidden xs:inline">Add User</span>
-              <span className="xs:hidden">Add</span>
+              <span className="hidden sm:inline">Add User</span>
+              <span className="sm:hidden">Add</span>
             </Button>
           )}
         </div>

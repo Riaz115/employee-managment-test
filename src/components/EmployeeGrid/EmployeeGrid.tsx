@@ -114,8 +114,8 @@ export const EmployeeGrid = ({
                   <span
                     className={`px-3 py-1.5 inline-flex text-xs leading-5 font-semibold rounded-full ${
                       employee.role === "admin"
-                        ? "bg-gradient-to-r from-blue-500 to-indigo-600 dark:from-blue-600 dark:to-indigo-700 text-white shadow-md"
-                        : "bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-600 dark:to-pink-600 text-white shadow-md"
+                        ? "bg-gradient-to-r from-amber-400 to-orange-500 dark:from-amber-500 dark:to-orange-600 text-white shadow-md"
+                        : "bg-gradient-to-r from-cyan-400 to-teal-500 dark:from-cyan-500 dark:to-teal-600 text-white shadow-md"
                     }`}
                   >
                     {employee.role}
@@ -125,11 +125,11 @@ export const EmployeeGrid = ({
                   <span
                     className={`px-3 py-1.5 inline-flex text-xs leading-5 font-semibold rounded-full ${
                       employee.flagged
-                        ? "bg-gradient-to-r from-red-500 to-orange-500 dark:from-red-600 dark:to-orange-600 text-white shadow-md"
-                        : "bg-gradient-to-r from-green-500 to-emerald-500 dark:from-green-600 dark:to-emerald-600 text-white shadow-md"
+                        ? "bg-gradient-to-r from-rose-500 to-pink-600 dark:from-rose-600 dark:to-pink-700 text-white shadow-md"
+                        : "bg-gradient-to-r from-emerald-400 to-green-500 dark:from-emerald-500 dark:to-green-600 text-white shadow-md"
                     }`}
                   >
-                    {employee.flagged ? "Flag" : "Active"}
+                    {employee.flagged ? "Flagged" : "Active"}
                   </span>
                 </td>
                 <td className="px-4 py-4 whitespace-nowrap">
