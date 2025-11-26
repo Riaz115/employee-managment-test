@@ -1,24 +1,24 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-// const getGraphQLUrl = () => {
-//   if (import.meta.env.VITE_GRAPHQL_URL) {
-//     return import.meta.env.VITE_GRAPHQL_URL;
-//   }
+const getGraphQLUrl = () => {
+  if (import.meta.env.VITE_GRAPHQL_URL) {
+    return import.meta.env.VITE_GRAPHQL_URL;
+  }
 
-//   if (import.meta.env.PROD) {
-//     return "/api/graphql";
-//   }
+  if (import.meta.env.PROD) {
+    return "/api/graphql";
+  }
 
-//   return "http://localhost:4000/graphql";
-// };
+  return "http://localhost:4000/graphql";
+};
 
-// const httpLink = createHttpLink({
-//   uri: getGraphQLUrl(),
-// });
 const httpLink = createHttpLink({
-  uri: "http://localhost:4000/graphql",
+  uri: getGraphQLUrl(),
 });
+// const httpLink = createHttpLink({
+//   uri: "http://localhost:4000/graphql",
+// });
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("authToken");
